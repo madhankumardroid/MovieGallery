@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+apply from: '../versions.gradle'
+apply from: '../api.gradle'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.movie.moviegallery"
+        minSdkVersion 15
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField 'String', 'MOVIE_DB_API_KEY', "\"$API_KEY\""
+        buildConfigField 'String', 'BASE_URL', "\"$BASE_URL\""
+        buildConfigField 'String', 'IMAGE_BASE_URL', "\"$IMAGE_BASE_URL\""
+        buildConfigField 'String', 'IMAGE_SIZE', "\"$IMAGE_SIZE\""
+        buildConfigField 'String', 'THUMBNAIL_SIZE', "\"$THUMBNAIL_SIZE\""
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "com.android.support:appcompat-v7:$supportVersion"
+    implementation "com.android.support:design:$supportVersion"
+    implementation "com.android.support.constraint:constraint-layout:$constraintVersion"
+    implementation "com.android.support:support-v4:$supportVersion"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    testImplementation "junit:junit:$jUnitVersion"
+    androidTestImplementation("com.android.support.test.espresso:espresso-core:$espressoVersion", {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation "com.android.support:recyclerview-v7:$supportVersion"
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+}

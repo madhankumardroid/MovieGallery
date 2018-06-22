@@ -1,0 +1,9 @@
+ext{
+    retrofitVersion = '2.4.0'
+    okhttpVersion = '3.10.0'
+    supportVersion = '27.1.1'
+    constraintVersion = '1.0.2'
+    espressoVersion = '3.0.1'
+    jUnitVersion = '4.12'
+    glideVersion = '4.7.1'
+}
