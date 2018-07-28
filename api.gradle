@@ -1,6 +1,6 @@
 ext {
     BASE_URL = "https://api.themoviedb.org/3/"
-    API_KEY = "3687ea4a697fde81d19f67a623710883"
+    API_KEY = "<YOUR-API-KEY>"
     IMAGE_BASE_URL ="https://image.tmdb.org/t/p/"
     IMAGE_SIZE = "w300"
     THUMBNAIL_SIZE= "w154"
